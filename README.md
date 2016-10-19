@@ -19,6 +19,7 @@ Ações para um novo release
 - Restartar as builds do master das dependências plonegovbr no travis;
 - Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg será copiado para https://github.com/plonegovbr/portalpadrao.release, criando um novo diretório para aquele release;
 - É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg informando esse novo release criado;
+- Restartar a build do master de portal.buildout em travis;
 - Criação da tag do release em https://github.com/plonegovbr/portalpadrao.release;
 - Criação da tag do release em https://github.com/plonegovbr/portal.buildout;
 - Envio de email pra lista plonegovbr indicando o lançamento desse novo release.
