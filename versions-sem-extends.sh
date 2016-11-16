@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# Esse script gera um arquivo de versions das dependências sem extends.
+# Acesse https://github.com/plonegovbr/portalpadrao.release/blob/master/README.md
+# na seção "Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?"
+# para entender a motivação desse script.
+
 if [ $# -eq 0 ]; then
     echo "Preciso de um release como parâmetro. Ex: 1.1.5"
     echo "Esse script só foi testado para versões >= 1.1.5."
