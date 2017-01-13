@@ -23,7 +23,8 @@ else
             # Remove todas as linhas que começam com 4 espaços, geralmente são
             # linhas que contém as urls http;
             # Troco todas as strings '= ' para ' = ' para melhor visibilidade,
-            # já que todos os pacotes vem como 'my.package= x.x.'
+            # já que todos os pacotes vem como 'my.package= x.x.'. Isso ocorre
+            # por causa dessa linha: https://github.com/buildout/buildout/blob/b8e599fd90f7167735351ce8deeae8b9fe4c16a8/src/zc/buildout/buildout.py#L1119
             # Garantir que tenho valores únicos e em ordem alfabética
             bin/buildout -c production.cfg annotate | sed '1,/\[versions\]/d' | sed '/^$/,$ d' | sed '/    /d' | sed 's/= / = /' | uniq | sort > versions-sem-extends.cfg
 
