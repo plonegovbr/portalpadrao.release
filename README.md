@@ -37,6 +37,16 @@ Ações para um novo release
     - Gerar tag em https://github.com/plonegovbr/portalpadrao.release;
 - Envio de email pra lista plonegovbr indicando o lançamento desse novo release.
 
-Deve haver uma preocupação para que as versões de brasil.gov.portal sempre tenham a mesma versão de um release lançado em https://github.com/plonegovbr/portalpadrao.release, podendo ser aceitas variações mínimas como bugfixes (exemplo: brasil.gov.portal é 1.1.3 mas temos o release 1.1.3.1).
+Como escolher corretamente o arquivo de versões de um release
+-------------------------------------------------------------
 
-Observação: no passado, para releases temporários, se usava o **-pending**, mas isso traz a desvantagem de quebrar todo pacote que referencia o pending quando você tenta voltar o histórico e rodar o buildout e por isso não será mais utilizado.
+A versão escolhida em portalpadrao.release deve ser a mesma que a brasil.gov.portal sendo aceitas variações mínimas como bugfixes de um release (exemplo, o brasil.gov.portal é 1.1.5.1 mas o último release é o 1.1.5.2). 
+
+Pode ser que um release tenha sido lançado e, mesmo testado, ocorra uma situação muito específica que impeça o release de funcionar corretamente (uma dependência errada, uma diretiva de configuração de buildout incorreta, etc). Nesse tipo de situação, é feita a correção e gerado um bugfix do release. Não são feitos bugfixes de releases para adicionar novas funcionalidades pois o escopo já havia sido fechado no momento que ele foi lançado.
+
+Como um release do IDG não envolve apenas o pacote brasil.gov.portal pois existem várias dependências (brasil.gov.\* e vários pacotes da comunidade), não faz sentido mudar a versão de brasil.gov.portal se a modificação que por ventura tenha sido feita para o bugfix daquele release tiver ocorrido em outro pacote: por isso pode ocorrer a situação de um brasi.gov.portal ser a versão 1.1.5.1 mas aqui no portalpadrao.release ser 1.1.5.2.
+
+Observações finais
+------------------
+
+No passado, para releases temporários, se usava o **-pending**, mas isso traz a desvantagem de quebrar todo pacote que referencia o pending quando você tenta voltar o histórico e rodar o buildout e por isso não será mais utilizado.
