@@ -3,15 +3,6 @@ portalpadrao.release
 
 Esse repositório contém os arquivos com as versões utilizadas em cada release do Portal Padrão e uma explicação técnica do funcionamento do lançamento de um novo release.
 
-Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?
--------------------------------------------------------------
-
-Até o release 1.1.4, o arquivo versions.cfg era um arquivo compilado *manualmente* não contendo nenhuma url a mais no extends.
-
-A partir do release 1.1.5, passamos a usar como referência no extends o versions do Plone para a última versão do Plone homologada pelo IDG, de forma a diminuir o retrabalho na criação desse arquivo de versões. Isso significa que o seu servidor precisará ter acesso externo à essas urls do extends para funcionar corretamente.
-
-Para situações em que você não pode usar o extends de uma url externa (ambientes sem acesso externo), baixe o versions-sem-extends.cfg para a sua instância e renomeie para versions.cfg.
-
 Passos para criação de um novo release
 ======================================
 
@@ -45,6 +36,15 @@ A versão escolhida em portalpadrao.release deve ser a mesma que a brasil.gov.po
 Pode ser que um release tenha sido lançado e, mesmo testado, ocorra uma situação muito específica que impeça o release de funcionar corretamente (uma dependência errada, uma diretiva de configuração de buildout incorreta, etc). Nesse tipo de situação, é feita a correção e gerado um bugfix do release. Não são feitos bugfixes de releases para adicionar novas funcionalidades pois o escopo já havia sido fechado no momento que ele foi lançado.
 
 Como um release do IDG não envolve apenas o pacote brasil.gov.portal pois existem várias dependências (brasil.gov.\* e vários pacotes da comunidade), não faz sentido mudar a versão de brasil.gov.portal se a modificação que por ventura tenha sido feita para o bugfix daquele release tiver ocorrido em outro pacote: por isso pode ocorrer a situação de um brasi.gov.portal ser a versão 1.1.5.1 mas aqui no portalpadrao.release ser 1.1.5.2.
+
+Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?
+-------------------------------------------------------------
+
+Até o release 1.1.4, o arquivo versions.cfg era um arquivo compilado *manualmente* não contendo nenhuma url a mais no extends.
+
+A partir do release 1.1.5, passamos a usar como referência no extends o versions do Plone para a última versão do Plone homologada pelo IDG, de forma a diminuir o retrabalho na criação desse arquivo de versões. Isso significa que o seu servidor precisará ter acesso externo à essas urls do extends para funcionar corretamente.
+
+Para situações em que você não pode usar o extends de uma url externa (ambientes sem acesso externo), baixe o versions-sem-extends.cfg para a sua instância e renomeie para versions.cfg.
 
 Observações finais
 ------------------
