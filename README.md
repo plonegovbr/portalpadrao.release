@@ -46,6 +46,11 @@ A partir do release 1.1.5, passamos a usar como referência no extends o version
 
 Para situações em que você não pode usar o extends de uma url externa (ambientes sem acesso externo), baixe o versions-sem-extends.cfg para a sua instância e renomeie para versions.cfg.
 
+Como devo efetuar a atualização entre releases?
+-----------------------------------------------
+
+Ver http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/
+
 Observações finais
 ------------------
 
