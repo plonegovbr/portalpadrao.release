@@ -13,6 +13,7 @@ Versões e pinagens de novos releases em andamento (ou seja, que não tenham ain
 Ações para um novo release
 ---------------------------
 
+- Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
 - As dependências plonegovbr (como brasil.gov.tiles, brasil.gov.portlets e etc) tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no pypi;
 - Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg;
 - É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
