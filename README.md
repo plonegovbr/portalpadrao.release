@@ -14,18 +14,18 @@ Ações para um novo release
 ---------------------------
 
 - Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
-- As dependências plonegovbr (como brasil.gov.tiles, brasil.gov.portlets e etc) tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no pypi;
+- As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no pypi;
 - Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg;
 - É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
 - É feita uma revisão nas issues de https://github.com/plonegovbr/portalpadrao.release/ e https://github.com/plonegovbr/portal.buildout/ para ver se alguma melhoria pode ser incorporada no release;
-- Restartar as builds do master das dependências plonegovbr no travis;
+- Reiniciar as builds do master das dependências plonegovbr no travis, podendo ser todas ou apenas as alteradas para aquele release, ficando essa decisão por conta do responsável pelo release;
 - Criar uma instância da última versão de brasil.gov.portal e efetuar um teste exploratório mínimo;
-- Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg será copiado para https://github.com/plonegovbr/portalpadrao.release, criando um novo diretório para aquele release, e o versions-sem-extends.cfg gerado usando o script em https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh
+- Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg será copiado para https://github.com/plonegovbr/portalpadrao.release, de preferência numa nova branch, criando um novo diretório para aquele release;
 - É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg informando esse novo release criado (pode ser necessário esperar alguns minutos, pois a url http://downloads.plone.org.br/release/x.x.x/versions.cfg demora um tempo para sincronizar no github);
 - Verificar se a build do master de portal.buildout no travis está ok;
 - Criação das tags do release (esse é o **último** passo, é nessa ordem caso, durante os passos anteriores, seja necessária alguma alteração pontual):
     - Gerar tag em https://github.com/plonegovbr/portal.buildout;
-    - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar na pasta do release em https://github.com/plonegovbr/portalpadrao.release;
+    - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar o arquivo gerado na pasta do release em https://github.com/plonegovbr/portalpadrao.release;
     - Gerar tag em https://github.com/plonegovbr/portalpadrao.release;
 - Envio de email pra lista plonegovbr indicando o lançamento desse novo release.
 
