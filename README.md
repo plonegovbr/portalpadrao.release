@@ -27,7 +27,7 @@ Ações para um novo release
     - Gerar tag em https://github.com/plonegovbr/portal.buildout;
     - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar o arquivo gerado na pasta do release em https://github.com/plonegovbr/portalpadrao.release. Nesse momento, é interessante efetuar um diff no arquivo de versões do release anterior;
     - Gerar tag em https://github.com/plonegovbr/portalpadrao.release;
-- Envio de email pra lista plonegovbr indicando o lançamento desse novo release.
+- Envio de email pelo patrocinador pra lista plonegovbr indicando o lançamento desse novo release.
 
 Como escolher corretamente o arquivo de versões de um release
 -------------------------------------------------------------
