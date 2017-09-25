@@ -1,5 +1,4 @@
-#!/usr/bin/env bash
-
+#!/bin/bash -x
 # Esse script gera um arquivo de versions das dependências sem extends.
 # Acesse https://github.com/plonegovbr/portalpadrao.release/blob/master/README.md
 # na seção "Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?"
@@ -11,7 +10,7 @@ if [ $# -eq 0 ]; then
 else
     portal_padrao_idg_release="$1"
     if git clone https://github.com/plonegovbr/portal.buildout.git /tmp/portal.buildout; then
-        cd /tmp/portal.buildout
+        cd /tmp/portal.buildout || exit
         if git checkout "$portal_padrao_idg_release"; then
             python bootstrap.py -c production.cfg
 
@@ -35,6 +34,8 @@ else
             sed -i '1s/^/\[buildout\]\n# NÃO EDITE ESSE ARQUIVO, ele foi gerado dinamicamente pelo script https:\/\/raw.githubusercontent.com\/plonegovbr\/portalpadrao.release\/master\/versions-sem-extends.sh\n# Utilize esse arquivo caso o seu servidor não possua acesso à internet, uma vez que o versions.cfg tenta acessar vários cfgs externos no extends.\n# Para maiores informações, acesse a seção "Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?" no README.md em https:\/\/github.com\/plonegovbr\/portalpadrao.release\/blob\/master\/README.md\n\n# Ver em https:\/\/github\.com\/plonegovbr\/portal\.buildout\/blob\/ab6abcb596d51bb505db1f729065a335ecac9c1e\/buildout\.d\/versions\.cfg#L30 a motivação de "versions = versions".\nversions = versions\n\n\[versions\]\n/' versions-sem-extends.cfg
 
             echo "Arquivo versions-sem-extends compilado presente em $PWD/versions-sem-extends.cfg."
+            cd - || exit
+            cp "/tmp/portal.buildout/versions-sem-extends.cfg" "$portal_padrao_idg_release" && echo "Arquivo versions-sem-extends.cfg copiado para $portal_padrao_idg_release."
         fi
     fi
 fi
