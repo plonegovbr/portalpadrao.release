@@ -10,16 +10,16 @@ wget -O template-relato-release.md http://raw.githubusercontent.com/plonegovbr/p
 
 # https://stackoverflow.com/a/37222377
 packages=$(cat <<-END
-  - [ ] [brasil.gov.portal](https://github.com/plonegovbr/brasil.gov.portal/)
-  - [ ] [brasil.gov.tiles](https://github.com/plonegovbr/brasil.gov.tiles/)
-  - [ ] [brasil.gov.vcge 1.x](https://github.com/plonegovbr/brasil.gov.vcge/tree/1.0.x)
-  - [ ] [brasil.gov.vcge 2.x](https://github.com/plonegovbr/brasil.gov.vcge/)
-  - [ ] [brasil.gov.barra](https://github.com/plonegovbr/brasil.gov.barra/)
-  - [ ] [brasil.gov.portlets](https://github.com/plonegovbr/brasil.gov.portlets/)
-  - [ ] [brasil.gov.temas](https://github.com/plonegovbr/brasil.gov.temas/)
   - [ ] [brasil.gov.agenda](https://github.com/plonegovbr/brasil.gov.agenda/)
+  - [ ] [brasil.gov.barra](https://github.com/plonegovbr/brasil.gov.barra/)
   - [ ] [brasil.gov.facetada](https://github.com/plonegovbr/brasil.gov.facetada/)
   - [ ] [brasil.gov.paginadestaque](https://github.com/plonegovbr/brasil.gov.paginadestaque/)
+  - [ ] [brasil.gov.portal](https://github.com/plonegovbr/brasil.gov.portal/)
+  - [ ] [brasil.gov.portlets](https://github.com/plonegovbr/brasil.gov.portlets/)
+  - [ ] [brasil.gov.temas](https://github.com/plonegovbr/brasil.gov.temas/)
+  - [ ] [brasil.gov.tiles](https://github.com/plonegovbr/brasil.gov.tiles/)
+  - [ ] [brasil.gov.vcge 1.x](https://github.com/plonegovbr/brasil.gov.vcge/tree/1.x)
+  - [ ] [brasil.gov.vcge 2.x](https://github.com/plonegovbr/brasil.gov.vcge/)
 END
 )
 
