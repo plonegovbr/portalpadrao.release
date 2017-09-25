@@ -31,6 +31,7 @@ Ações para um novo release
     - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar o arquivo gerado na pasta do release em https://github.com/plonegovbr/portalpadrao.release. Nesse momento, é interessante efetuar um diff no arquivo de versões do release anterior;
     - Rodar o job do master de portal.buildout no travis com relação ao `versions-sem-extends.cfg`;
     - Estando tudo ok, gerar tag em https://github.com/plonegovbr/portalpadrao.release;
+    - É interessante adicionar, no release do github em portal.buildout e portalpadrao.release, o que foi adicionado na nova versão: quais os relatos que foram atendidos e avisos específicos sobre aquela versão, se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc). O github permite a edição do texto de um release após sua geração;
 - Envio de email pelo patrocinador pra lista plonegovbr indicando o lançamento desse novo release.
 
 Como escolher corretamente o arquivo de versões de um release
