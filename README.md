@@ -55,7 +55,7 @@ Para situações em que você não pode usar o extends de uma url externa (ambie
 Como devo efetuar a atualização entre releases?
 -----------------------------------------------
 
-Ver http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/
+Ler a documentação específica de cada release em https://github.com/plonegovbr/portalpadrao.release/releases/tag/x.x.x e https://github.com/plonegovbr/portal.buildout/releases/tag/x.x.x (sendo `x.x.x` a versão desejada) para poder seguir com manual oficial de atualização em http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/.
 
 Observações finais
 ------------------
