@@ -27,11 +27,11 @@ Ações para um novo release
 - É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg informando esse novo release criado (pode ser necessário esperar alguns minutos, pois a url http://downloads.plone.org.br/release/x.x.x/versions.cfg demora um tempo para sincronizar no github);
 - Verificar se a [build do master de portal.buildout no travis está ok](https://travis-ci.org/plonegovbr/portal.buildout/builds/). Pode ser que ela quebre por não haver ainda o `versions-sem-extends.cfg`;
 - Criação das tags do release (esse é o **último** passo, é nessa ordem caso, durante os passos anteriores, seja necessária alguma alteração pontual):
-    - Gerar tag em https://github.com/plonegovbr/portal.buildout;
-    - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar o arquivo gerado na pasta do release em https://github.com/plonegovbr/portalpadrao.release. Nesse momento, é interessante efetuar um diff no arquivo de versões do release anterior;
-    - Rodar o job do master de portal.buildout no travis com relação ao `versions-sem-extends.cfg`;
-    - Estando tudo ok, gerar tag em https://github.com/plonegovbr/portalpadrao.release;
-    - É interessante adicionar, no release do github em portal.buildout e portalpadrao.release, o que foi adicionado na nova versão: quais os relatos que foram atendidos e avisos específicos sobre aquela versão, se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc). O github permite a edição do texto de um release após sua geração;
+    - Gerar tag em https://github.com/plonegovbr/portal.buildout (se decidir [por gerar um novo release](https://github.com/plonegovbr/portal.buildout/releases/new), uma tag já é gerada automaticamente);
+    - Gerar o versions-sem-extends.cfg usando o script https://github.com/plonegovbr/portalpadrao.release/blob/master/versions-sem-extends.sh passando como parâmetro release gerado no passo anterior, e adicionar o arquivo gerado na pasta do release em https://github.com/plonegovbr/portalpadrao.release. Nesse momento, é interessante efetuar um diff no arquivo de versões do release anterior;
+    - [Rodar o job do master de portal.buildout](https://travis-ci.org/plonegovbr/portal.buildout/builds/) no travis com relação ao `versions-sem-extends.cfg`;
+    - Estando tudo ok, [gerar tag (ou release)](https://github.com/plonegovbr/portalpadrao.release/releases/new) em https://github.com/plonegovbr/portalpadrao.release;
+    - É interessante adicionar, no release do github em portal.buildout e portalpadrao.release, o que foi adicionado na nova versão: quais os relatos que foram atendidos e avisos específicos sobre aquela versão, se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc). O github permite a edição do texto de um release após sua geração;
 - Envio de email pelo patrocinador pra lista plonegovbr indicando o lançamento desse novo release.
 
 Como escolher corretamente o arquivo de versões de um release
