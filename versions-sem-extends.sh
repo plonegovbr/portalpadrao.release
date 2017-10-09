@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 # Esse script gera um arquivo de versions das dependências sem extends.
 # Acesse https://github.com/plonegovbr/portalpadrao.release/blob/master/README.md
 # na seção "Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?"
