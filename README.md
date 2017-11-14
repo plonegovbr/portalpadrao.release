@@ -13,30 +13,27 @@ Versões e pinagens de novos releases em andamento (ou seja, que não tenham ain
 Ações para um novo release
 ---------------------------
 
-- Confira se os testes de integração contínua do `portal.buildout <https://travis-ci.org/plonegovbr/portal.buildout>`_ passam em ambos builds, ``DEVELOPMENT`` e ``PRODUCTION``
+- Confira se os testes de integração contínua do [portal.buildout](https://travis-ci.org/plonegovbr/portal.buildout) passam em ambos builds, `DEVELOPMENT` e `PRODUCTION`
 - Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
   <!-- PACKAGES -->
-- As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no `PyPI <https://pypi.python.org/>`_;
+- As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no [PyPI](https://pypi.python.org/);
 - Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg;
   <!-- PACKAGES -->
 - É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
 - É feita uma revisão nas issues de https://github.com/plonegovbr/portalpadrao.release/issues e https://github.com/plonegovbr/portal.buildout/issues para ver se alguma melhoria pode ser incorporada no release;
   <!-- PACKAGES -->
 - Criar uma instância da última versão de brasil.gov.portal e efetuar um teste exploratório mínimo. É interessante montar uma instância anterior ao novo release e atualizar para testar os upgradeSteps;
-- Quando todas as revisões tiverem sido feitas e estiver para lançar um release,
-  o https://github.com/plonegovbr/portal.buildout/blob/master/etc/versions.cfg será copiado para https://github.com/plonegovbr/portalpadrao.release criando um novo diretório para aquele release:
+- Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/etc/versions.cfg será copiado para <https://github.com/plonegovbr/portalpadrao.release>, criando um novo diretório para aquele release:
 
-  .. code-block:: console
-
+    ~~~~ {.sourceCode .console}
     wget https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/etc/versions.cfg
+    ~~~~
 
 - É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg informando esse novo release criado (pode ser necessário esperar alguns minutos, pois a url http://downloads.plone.org.br/release/x.x.x/versions.cfg demora um tempo para sincronizar no github);
 - Criação das tags do release (esse é o **último** passo, é nessa ordem caso, durante os passos anteriores, seja necessária alguma alteração pontual):
-  - Gerar novo release em `portal.buildout <https://github.com/plonegovbr/portal.buildout/releases/new>`_ e em `portalpadrao.release <https://github.com/plonegovbr/portalpadrao.release/releases/new>`_ (uma tag será gerada automaticamente);
-  - É interessante adicionar no release o que foi adicionado na nova versão:
-    quais os relatos que foram atendidos e avisos específicos sobre aquela versão,
-    se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc).
-    O GitHub permite a edição do texto de um release após sua geração;
+    - Gerar novo release em [portal.buildout](https://github.com/plonegovbr/portal.buildout/releases/new) e em [portalpadrao.release](https://github.com/plonegovbr/portalpadrao.release/releases/new) (uma tag será gerada automaticamente);
+    - É interessante adicionar no release o que foi adicionado na nova versão: quais os relatos que foram atendidos e avisos específicos sobre aquela versão, se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc). O GitHub permite a edição do texto de um release após sua geração;
+
 - Aviso ao patrocinador do lançamento do release para que ele prossiga com o envio de email pelo patrocinador pra lista plonegovbr indicando o lançamento desse novo release.
 
 Como escolher corretamente o arquivo de versões de um release
@@ -51,14 +48,14 @@ Como um release do IDG não envolve apenas o pacote brasil.gov.portal pois exist
 Por que versions.cfg e versions-sem-extends.cfg? Qual devo usar?
 ----------------------------------------------------------------
 
-A partir do release 1.4 o ``versions.cfg`` passou a ser gerado automaticamente a cada mudança e ele inclui todas as versões homologadas necessárias para instalar e atualizar o IDG.
+A partir do release 1.4 o `versions.cfg` passou a ser gerado automaticamente a cada mudança e ele inclui todas as versões homologadas necessárias para instalar e atualizar o IDG.
 
-O uso do ``versions-sem-extends.cfg`` não é considerado mais uma boa prśtica e será removido na versão 1.5 do IDG.
+O uso do `versions-sem-extends.cfg` não é considerado mais uma boa prática e será removido na versão 1.5 do IDG.
 
 Como devo efetuar a atualização entre releases?
 -----------------------------------------------
 
-Ler a documentação específica de cada release em https://github.com/plonegovbr/portalpadrao.release/releases/tag/x.x.x ou https://github.com/plonegovbr/portal.buildout/releases/tag/x.x.x (sendo ``x.x.x`` a versão desejada) e continue com o manual oficial de `Atualização de release <http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/>`_.
+Ler a documentação específica de cada release em <https://github.com/plonegovbr/portalpadrao.release/releases/tag/x.x.x> ou <https://github.com/plonegovbr/portal.buildout/releases/tag/x.x.x> (sendo `x.x.x` a versão desejada) e continue com o manual oficial de [Atualização de release](http://identidade-digital-de-governo-plone.readthedocs.io/en/latest/atualizacao/).
 
 Observações finais
 ------------------
