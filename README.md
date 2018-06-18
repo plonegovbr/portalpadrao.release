@@ -8,7 +8,7 @@ Passos para criação de um novo release
 
 A definição do que deve entrar em cada release é definido pela SECOM, com o desenvolvimento das funcionalidades/correções podendo ser feitas com os parceiros ou interessados na comunidade plonegovbr.
 
-Versões e pinagens de novos releases em andamento (ou seja, que não tenham ainda o seu lançamento oficial) são feitas no arquivo https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg, presente em outro repositório, o https://github.com/plonegovbr/portal.buildout/.
+Versões e pinagens de novos releases em andamento (ou seja, que não tenham ainda o seu lançamento oficial) são feitas no arquivo https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg, presente em outro repositório, o https://github.com/plonegovbr/portal.buildout/. No momento, também temos a branch 1.x em https://github.com/plonegovbr/portal.buildout/blob/1.x/buildout.d/versions.cfg.
 
 Ações para um novo release
 ---------------------------
@@ -17,19 +17,19 @@ Ações para um novo release
 - Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
   <!-- PACKAGES -->
 - As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no [PyPI](https://pypi.org/);
-- Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg;
+- Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (ou outra branch);
   <!-- PACKAGES -->
-- É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
+- É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg  (ou outra branch, procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
 - É feita uma revisão nas issues de https://github.com/plonegovbr/portalpadrao.release/issues e https://github.com/plonegovbr/portal.buildout/issues para ver se alguma melhoria pode ser incorporada no release;
   <!-- PACKAGES -->
 - Criar uma instância da última versão de brasil.gov.portal e efetuar um teste exploratório mínimo. É interessante montar uma instância anterior ao novo release e atualizar para testar os upgradeSteps;
-- Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/etc/versions.cfg será copiado para <https://github.com/plonegovbr/portalpadrao.release>, criando um novo diretório para aquele release:
+- Quando todas as revisões tiverem sido feitas e estiver para lançar um release, o https://github.com/plonegovbr/portal.buildout/blob/master/etc/versions.cfg (ou outra branch) será copiado para <https://github.com/plonegovbr/portalpadrao.release>, criando um novo diretório para aquele release:
 
     ~~~~ {.sourceCode .console}
     wget https://raw.githubusercontent.com/plonegovbr/portal.buildout/master/etc/versions.cfg
     ~~~~
 
-- É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg informando esse novo release criado (pode ser necessário esperar alguns minutos, pois a url http://downloads.plone.org.br/release/x.x.x/versions.cfg demora um tempo para sincronizar no github);
+- É feita uma alteração no `extends` de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/base.cfg (ou outra branch) informando esse novo release criado (pode ser necessário esperar alguns minutos, pois a url http://downloads.plone.org.br/release/x.x.x/versions.cfg demora um tempo para sincronizar no github);
 - Criação das tags do release (esse é o **último** passo, é nessa ordem caso, durante os passos anteriores, seja necessária alguma alteração pontual):
     - Gerar novo release em [portal.buildout](https://github.com/plonegovbr/portal.buildout/releases/new) e em [portalpadrao.release](https://github.com/plonegovbr/portalpadrao.release/releases/new) (uma tag será gerada automaticamente);
     - É interessante adicionar no release o que foi adicionado na nova versão: quais os relatos que foram atendidos e avisos específicos sobre aquela versão, se for o caso (como necessidade de novas variáveis de ambiente, ordem de upgradeSteps, etc). O GitHub permite a edição do texto de um release após sua geração;
