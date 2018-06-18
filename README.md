@@ -16,7 +16,7 @@ Ações para um novo release
 - Confira se os testes de integração contínua do [portal.buildout](https://travis-ci.org/plonegovbr/portal.buildout) passam em ambos builds, `DEVELOPMENT` e `PRODUCTION`
 - Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
   <!-- PACKAGES -->
-- As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no [PyPI](https://pypi.python.org/);
+- As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no [PyPI](https://pypi.org/);
 - Os releases de dependências plonegovbr feitas no passo anterior, as pinagens de dependências externas e do próprio Plone que foram testados durante o processo de geração de release são adicionadas/alteradas em https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg;
   <!-- PACKAGES -->
 - É feita uma revisão em todas as pinagens de https://github.com/plonegovbr/portal.buildout/blob/master/buildout.d/versions.cfg (procure por FIXME, HACK, BBB) para ver se poderá ser feita alguma modificação para aquele release em específico;
