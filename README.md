@@ -13,7 +13,7 @@ Versões e pinagens de novos releases em andamento (ou seja, que não tenham ain
 Ações para um novo release
 ---------------------------
 
-- Confira se os testes de integração contínua do [portal.buildout](https://travis-ci.org/plonegovbr/portal.buildout) passam em ambos builds, `DEVELOPMENT` e `PRODUCTION`
+- Confira se os testes de integração contínua do [portal.buildout](https://travis-ci.org/plonegovbr/portal.buildout) passam em ambos builds, `DEVELOPMENT` e `PRODUCTION`. Caso precise reiniciar alguma build sem comitar código, veja as alternativas em https://stackoverflow.com/questions/17606874/trigger-a-travis-ci-rebuild-without-pushing-a-commit.
 - Se a versão do Plone tiver sido alterada, favor indicar em https://github.com/plonegovbr/brasil.gov.portal#requisitos;
   <!-- PACKAGES -->
 - As dependências plonegovbr, se tiverem sofrido alteração, tem seus respectivos releases criados, tags geradas e pacotes disponibilizados no [PyPI](https://pypi.org/);
